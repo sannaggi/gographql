@@ -6,24 +6,12 @@ import (
 	"os"
 
 	"github.com/99designs/gqlgen/handler"
-	"github.com/go-pg/pg/v9"
 	"github.com/sannaggi/gographql"
-	"github.com/sannaggi/gographql/postgres"
 )
 
 const defaultPort = "8080"
 
 func main() {
-	DB := postgres.New(&pg.Options{
-		User:     "postgres",
-		Password: "postgres",
-		Database: "gographql_dev",
-	})
-
-	defer DB.Close()
-
-	DB.AddQueryHook(postgres.DBLogger{})
-
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort

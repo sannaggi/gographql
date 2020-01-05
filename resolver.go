@@ -93,7 +93,15 @@ func (u *userResolver) Meetups(ctx context.Context, obj *models.User) ([]*models
 }
 
 func (m *mutationResolver) CreateMeetup(ctx context.Context, input NewMeetup) (*models.Meetup, error) {
-	panic("implement me")
+	newMeetUp := models.Meetup{
+		ID:          "777",
+		Name:        input.Name,
+		Description: input.Description,
+		UserID:      "2",
+	}
+	meetups = append(meetups, &newMeetUp)
+
+	return &newMeetUp, nil
 }
 
 func (r *queryResolver) Meetups(ctx context.Context) ([]*models.Meetup, error) {
