@@ -1,0 +1,4 @@
+https://www.youtube.com/watch?v=cphghdh1DoY&list=PLzQWIQOqeUSNwXcneWYJHUREAIucJ5UZn&index=3&t=0s
+
+- go mod init github.com/sannaggi/gographql
+- go run github.com/99designs/gqlgen init
